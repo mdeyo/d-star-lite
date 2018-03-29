@@ -59,6 +59,7 @@ def computeShortestPath(graph, queue, s_start, k_m):
             updateVertex(graph, queue, u, s_start, k_m)
             for i in graph.graph[u].parents:
                 updateVertex(graph, queue, i, s_start, k_m)
+        # graph.printGValues()
 
 
 def nextInShortestPath(graph, s_current):

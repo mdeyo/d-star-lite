@@ -33,6 +33,18 @@ class GridWorld(Graph):
         for row in self.cells:
             print(row)
 
+    def printGValues(self):
+        for j in range(self.y_dim):
+            str_msg = ""
+            for i in range(self.x_dim):
+                node_id = 'x' + str(i) + 'y' + str(j)
+                node = self.graph[node_id]
+                if node.g == float('inf'):
+                    str_msg += ' - '
+                else:
+                    str_msg += ' ' + str(node.g) + ' '
+            print(str_msg)
+
     def generateGraphFromGrid(self):
         edge = 1
         for i in range(len(self.cells)):
